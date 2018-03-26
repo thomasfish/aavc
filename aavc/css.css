@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global */
+body {
+  background: #513726;
+  background-image: url("imgs/leather.jpg");
+  background-size: 1600px;
+  font-family: Nunito, sans-serif;
+}
+
+/* Logo*/
+header {
+  margin: 20px;
+  margin-bottom: 50px;
+  font-size: 70px;
+  text-align: center;
+}
+
+header h1.aa {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  color: #0F47B2;
+  font-size: 1em;
+  letter-spacing: -0.05em;
+  text-shadow: 2px 0px 0 #fff,
+               2px 2px 0 #fff,
+               0px 2px 0 #fff,
+               -2px 2px 0 #fff,
+               -2px 0px 0 #fff,
+               -2px -2px 0 #fff,
+               0px -2px 0 #fff,
+               2px -2px 0 #fff,
+
+               5px 0px 0 #231815, /* top center */
+               5px 5px 0 #231815, /* right bottom */
+               0px 5px 0 #231815, /* center bottom */
+               -5px 5px 0 #231815, /* left bottom */
+               -5px 0px 0 #231815, /* left center */
+               -5px -5px 0 #231815, /* left top */
+               0px -5px 0 #231815, /* center top */
+               5px -5px 0 #231815, /* right top */
+               -5px -2.5px 0 #231815, /* topish left */
+               -5px 2.5px 0 #231815, /* bottomish left */
+               5px -2.5px 0 #231815, /* topish right */
+               5px 2.5px 0 #231815, /* bottomish right */
+               -2.5px -5px 0 #231815,
+               2.5px -5px 0 #231815,
+               -2.5px 5px 0 #231815,
+               2.5px 5px 0 #231815;
+}
+
+header h1.vc {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  color: #FFFBBF;
+  font-size: 0.625em;
+  letter-spacing: 0.05em;
+  text-shadow: 3px 0px 0 #231815, /* top center */
+               3px 3px 0 #231815, /* right bottom */
+               0px 3px 0 #231815, /* center bottom */
+               -3px 3px 0 #231815, /* left bottom */
+               -3px 0px 0 #231815, /* left center */
+               -3px -3px 0 #231815, /* left top */
+               0px -3px 0 #231815, /* center top */
+               3px -3px 0 #231815, /* right top */
+               -3px -1.5px 0 #231815, /* topish left */
+               -3px 1.5px 0 #231815, /* bottomish left */
+               3px -1.5px 0 #231815, /* topish right */
+               3px 1.5px 0 #231815, /* bottomish right */
+               -1.5px -3px 0 #231815,
+               1.5px -3px 0 #231815,
+               -1.5px 3px 0 #231815,
+               1.5px 3px 0 #231815;
+}
+
+/* Overall Main Section */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 0;
+  background: url("imgs/lightpaperfibers.png");
+  background: #f9f9f9;
+  box-shadow: 0 0 2px rgba(0,0,0,0.7);
+  font-size: 20px;
+  line-height: 1.5;
+  border: 2px solid #999;
+  border-radius: 7px;
+}
+main .intro p {
+  padding: 25px;
+}
+
+.tab {
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+  padding: 5px 15px;
+  font-weight: 400;
+  top: 2px;
+  left: 30px;
+  cursor: pointer;
+}
+
+.tab::before {
+  content: ''; /* To generate the box */
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  background: #f9f9f9;
+  border: 2px solid #999;
+  border-bottom: none;
+  transform: perspective(15px) rotateX(1deg);
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 -2px 3px rgba(0,0,0,0.1),
+              0 2px 1px #fff inset;
+}
+
+.tab::after {
+  content: "\002B";
+  margin-left: 10px;
+}
+
+.tab.active::after {
+  content: "\2212";
+}
+
+.panel {
+  border-top: 2px solid #999;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0 20px 20px 20px;
+}
+
+.panel > :first-child {
+  margin-top: 25px;
+}
+
+.icon {
+  width: 120px;
+  height: 120px;
+  background-size: 100% 100%;
+  display: inline-block;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  margin: 2px;
+  transition: all 0.2s;
+}
+
+.icon h4 {
+  display: inline-block;
+  display: none;
+}
+
+.group .icon h5 {
+  display: inline-block;
+  font-size: 18px;
+  position: absolute;
+  bottom: 0; left: 0;
+  text-shadow: 0 0 3px rgba(0,0,0,0.8);
+  padding: 3px 12px 1px 5px;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 400;
+  z-index: 2;
+}
+
+.group .icon h5::before {
+  content: ''; /* To generate the box */
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: perspective(15px) rotateX(1deg);
+  transform-origin: bottom left;
+  border-radius: 0 5px 0 0;
+}
+
+.group {
+  margin-bottom: 12px;
+}
